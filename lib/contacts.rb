@@ -24,4 +24,15 @@ def remove_strawberry(contacts)
     end
   end
 =end
+  contacts.each do |person, value_hash|
+    if person == "Freddy Mercury"
+      value_hash.each do |key, value|
+        if key == :favorite_ice_cream_flavors
+          value.delete_if do |ice_cream|
+            ice_cream == "strawberry"
+          end
+        end
+      end
+    end
+  end
 end
